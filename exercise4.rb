@@ -4,7 +4,16 @@ require_relative "list_node"
 #   is in the list and 
 #   return false otherwise
 def find(head, value)
-
+  current = head
+  
+  until current.next_node.nil?
+    if current.data == value
+      return true
+    end
+    
+    current = current.next_node
+  end
+  
   return false
 end
 

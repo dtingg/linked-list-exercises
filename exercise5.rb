@@ -1,9 +1,33 @@
 require_relative "list_node"
 
 # Returns the list reversed
-def reverse(head)
+# def reverse(head)
+#   current = head
+#   new_head = ListNode.new(current.data)
 
-  return head
+#   while !current.next_node.nil?
+#     new_head = ListNode.new(current.next_node.data, new_head)
+#     current = current.next_node
+#   end
+
+#   return new_head
+# end
+
+def reverse(head)
+  return nil if head.nil?
+  current = head
+  previous_node = nil
+  
+  until current.nil?
+    next_node = current.next_node
+    current.next_node = previous_node
+    previous_node = current
+    current = next_node
+    
+    
+  end
+  
+  return previous_node
 end
 
 # Block 1 - Create the list
